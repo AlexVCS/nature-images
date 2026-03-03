@@ -4,7 +4,7 @@ const APP_NAME = "Grid Lanes Demo";
 async function fetchNaturePhotos() {
   const url = `https://api.unsplash.com/photos/random?client_id=${
     import.meta.env.VITE_CLIENT_ID
-  }&query=nature&count=15`;
+  }&query=nature&count=30`;
 
   try {
     const response = await fetch(url);
@@ -18,22 +18,21 @@ async function fetchNaturePhotos() {
 
     photos.forEach((photo) => {
       const figure = document.createElement("figure");
-      figure.classList.add("grid-item"); // Added class
+      figure.classList.add("grid-item");
 
       const img = document.createElement("img");
       img.src = photo.urls.regular;
 
       const caption = document.createElement("figcaption");
-      caption.classList.add("attribution"); // Added class
-      caption.innerHTML = `
-  Photo by 
-  <a href="${photo.user.links.html}?utm_source=${APP_NAME}&utm_medium=referral">
-    ${photo.user.name}
-  </a> on 
-  <a href="https://unsplash.com/?utm_source=${APP_NAME}&utm_medium=referral">
-    Unsplash
-  </a>
-`;
+      caption.classList.add("attribution");
+      caption.innerHTML =
+      `Photo by 
+        <a href="${photo.user.links.html}?utm_source=${APP_NAME}&utm_medium=referral">
+          ${photo.user.name}
+        </a> on 
+        <a href="https://unsplash.com/?utm_source=${APP_NAME}&utm_medium=referral">
+          Unsplash
+        </a>`;
 
       figure.appendChild(img);
       figure.appendChild(caption);

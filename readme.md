@@ -1,7 +1,7 @@
 # Nature Pics
 
 <div align="center">
-  <img src="grid_lanes_screenshot.png" style="height:400px" />
+  <img src="public/grid_lanes_screenshot.png" style="height:400px" />
 </div>
 
 
@@ -20,6 +20,24 @@ In your .env file add this (delete the placeholder and add your Unsplash access 
 ```bash
 VITE_CLIENT_ID=YOUR_UNSPLASH_ACCESS_KEY
 ```
+
+## Run the project
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Then start the development server:
+
+```bash
+npm run dev
+```
+
+This will start the dev server at http://localhost:5173.
+
+---
 
 Learn more about CSS Grid Lanes:
 
